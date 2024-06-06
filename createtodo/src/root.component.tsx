@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 
+interface Todo {
+  id: string;
+  text: string;
+  completed: boolean;
+}
+
 export default function Root(props) {
-  const [listTodo, setListTodo] = useState([]);
+  const [listTodo, setListTodo] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
 
   const getTodoList = () => {
@@ -21,10 +27,10 @@ export default function Root(props) {
 
     const updatedList = [
       ...listTodo,
-      { id: Date.now(), text: newTodo, completed: false },
+      { id: Date.now().toString(), text: newTodo, completed: false },
     ];
     localStorage.setItem("list", JSON.stringify(updatedList));
-    setListTodo(updatedList); 
+    setListTodo(updatedList);
     alert("Todo added successfully!");
     setNewTodo("");
   };
@@ -49,6 +55,14 @@ export default function Root(props) {
         placeholder="Add a new todo"
       />
       <button onClick={addTodo}>Add Todo</button>
+      
+      <ul>
+        {listTodo.map((todo) => (
+          <li key={todo.id}>
+            {todo.text}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
