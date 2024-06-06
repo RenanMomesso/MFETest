@@ -1,0 +1,43 @@
+/* styles/Root.css */
+
+.section-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .filter-buttons button {
+    margin: 0 5px;
+  }
+  
+  .todo-list {
+    padding: 0;
+  }
+  
+  .todo-item {
+    list-style-type: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .todo-item input {
+    margin-right: 1rem;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .todo-item span {
+    text-decoration: none;
+  }
+  
+  .todo-item span.completed {
+    text-decoration: line-through;
+  }
+  
