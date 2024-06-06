@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import "./root.css";
-import TodoItem from "./components/TodoItem"; // Import TodoItem component
+import TodoItem from "./components/TodoItem"; 
 
 interface Todo {
   id: string;
